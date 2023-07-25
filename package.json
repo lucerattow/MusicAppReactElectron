@@ -6,7 +6,7 @@
   "author": "Lucas Ezequiel Ceratto",
   "scripts": {
     "start": "react-scripts start",
-    "start-electron": ".\\node_modules\\.bin\\electron .",
+    "electron": ".\\node_modules\\.bin\\electron .",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
