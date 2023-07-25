@@ -1,0 +1,25 @@
+@import "~/src/sass/index.scss";
+
+.player {
+  text-align: center;
+
+  i.icon {
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 10px;
+    transition: opacity 0.1s;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+  }
+
+  .ui.progress.tiny {
+    margin: 0;
+
+    .progress {
+      display: none;
+    }
+  }
+}

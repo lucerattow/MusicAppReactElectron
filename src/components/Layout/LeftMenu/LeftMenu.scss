@@ -1,0 +1,32 @@
+@import "~/src/sass/index.scss";
+
+.left-menu {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  .ui.menu.vertical.secondary.fluid {
+    margin: 0;
+
+    .item {
+      border-radius: 0px !important;
+      border-left: 4px solid transparent;
+      color: $font-grey;
+
+      i {
+        color: $font-grey;
+      }
+
+      &.active {
+        border-color: $primary-color;
+        color: $font-light;
+
+        i {
+          color: $font-light;
+        }
+      }
+    }
+  }
+}
