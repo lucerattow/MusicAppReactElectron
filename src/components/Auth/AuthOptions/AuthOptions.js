@@ -1,6 +1,6 @@
-import React from 'react'
-import { Button } from 'semantic-ui-react'
-import "./AuthOptions.scss"
+import React from "react";
+import { Button } from 'semantic-ui-react';
+import "./AuthOptions.scss";
 
 export function AuthOptions({ openLogin, openRegister }) {
   //Renderizado
@@ -14,5 +14,5 @@ export function AuthOptions({ openLogin, openRegister }) {
         Iniciar sesión
       </Button>
     </div>
-  )
+  );
 }

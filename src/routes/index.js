@@ -1,1 +1,1 @@
-export * from "./LoggedNavigation"
+export * from "./LoggedNavigation";

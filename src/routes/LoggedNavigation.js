@@ -1,7 +1,7 @@
-import React from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { LoggedLayout } from "../layout"
-import { Home, Artists, Artist, Albums, Album, Profile } from "../pages"
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LoggedLayout } from "../layout";
+import { Home, Artists, Artist, Albums, Album, Profile } from "../pages";
 
 export function LoggedNavigation() {
   return (
@@ -17,5 +17,5 @@ export function LoggedNavigation() {
         </Routes>
       </LoggedLayout>
     </BrowserRouter>
-  )
+  );
 }

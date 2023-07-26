@@ -1,7 +1,7 @@
-import React from 'react'
-import { Image, Input, Icon } from "semantic-ui-react"
-import { Player } from "../../Shared"
-import "./Footer.scss"
+import React from 'react';
+import { Image, Input, Icon } from "semantic-ui-react";
+import { Player } from "../../Shared";
+import "./Footer.scss";
 
 export function Footer() {
   return (
@@ -25,5 +25,5 @@ export function Footer() {
         />
       </div>
     </div>
-  )
+  );
 }

@@ -1,1 +1,1 @@
-export * from "./firebase.js"
+export * from "./firebase.js";

@@ -1,6 +1,6 @@
-import React from 'react'
-import { LeftMenu, TopBar, Footer } from "./../../components/Layout"
-import "./LoggedLayout.scss"
+import React from 'react';
+import { LeftMenu, TopBar, Footer } from "./../../components/Layout";
+import "./LoggedLayout.scss";
 
 export function LoggedLayout({ children }) {
 
@@ -22,5 +22,5 @@ export function LoggedLayout({ children }) {
         <Footer />
       </div>
     </div>
-  )
+  );
 }

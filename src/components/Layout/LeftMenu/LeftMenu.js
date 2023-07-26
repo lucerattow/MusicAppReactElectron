@@ -1,32 +1,32 @@
-import React from 'react'
-import { Link, useLocation } from "react-router-dom"
-import { Menu } from 'semantic-ui-react'
-import "./LeftMenu.scss"
+import React from 'react';
+import { Link, useLocation } from "react-router-dom";
+import { Menu } from 'semantic-ui-react';
+import "./LeftMenu.scss";
 
 export function LeftMenu() {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   //variables
-  const routeHome = "/"
-  const routeArtists = "/Artists"
-  const routeAlbums = "/Albums"
+  const routeHome = "/";
+  const routeArtists = "/Artists";
+  const routeAlbums = "/Albums";
 
   //funciones
   const isCurrentPage = (route) => {
-    return route === pathname
-  }
+    return route === pathname;
+  };
 
   const addSong = () => {
-    console.log("subir cancion")
-  }
+    console.log("subir cancion");
+  };
 
   const addAlbum = () => {
-    console.log("crear album")
-  }
+    console.log("crear album");
+  };
 
   const addArtist = () => {
-    console.log("crear artista")
-  }
+    console.log("crear artista");
+  };
 
   //renderizacion
   return (
@@ -76,5 +76,5 @@ export function LeftMenu() {
         />
       </Menu>
     </div>
-  )
+  );
 }

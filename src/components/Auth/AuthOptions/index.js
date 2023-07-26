@@ -1,1 +1,1 @@
-export * from "./AuthOptions"
+export * from "./AuthOptions";

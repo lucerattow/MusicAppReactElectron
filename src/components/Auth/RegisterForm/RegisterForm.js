@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
-import { Form, Icon } from 'semantic-ui-react'
-import { useFormik } from "formik"
-import { initialValues, validationSchema } from "./RegisterForm.data"
-import { Auth } from "../../../api"
-import "./RegisterForm.scss"
+import React, { useState } from 'react';
+import { Form, Icon } from 'semantic-ui-react';
+import { useFormik } from "formik";
+import { initialValues, validationSchema } from "./RegisterForm.data";
+import { Auth } from "../../../api";
+import "./RegisterForm.scss";
 
-const auth = new Auth()
+const auth = new Auth();
 
 export function RegisterForm({ openLogin, goBack }) {
   //estados
-  const [showingPassword, setShowingPassword] = useState(false)
+  const [showingPassword, setShowingPassword] = useState(false);
 
   //funciones
-  const showPassword = () => setShowingPassword((prevState) => !prevState)
+  const showPassword = () => setShowingPassword((prevState) => !prevState);
 
   //validaciones
   const formik = useFormik({
@@ -20,14 +20,9 @@ export function RegisterForm({ openLogin, goBack }) {
     validationSchema: validationSchema(),
     validateOnChange: false,
     onSubmit: async (formValues) => {
-      try {
-        await auth.register(formValues.email, formValues.password)
-      }
-      catch (error) {
-        throw error
-      }
+      await auth.register(formValues.email, formValues.password);
     }
-  })
+  });
 
   //Renderizado
   return (
@@ -80,5 +75,5 @@ export function RegisterForm({ openLogin, goBack }) {
         <p>Ya tienes MUSIC? <span onClick={openLogin}>Inisiar sesión</span></p>
       </div>
     </div>
-  )
+  );
 }
