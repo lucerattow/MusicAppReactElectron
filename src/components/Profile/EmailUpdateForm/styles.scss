@@ -1,0 +1,21 @@
+@import "~/src/sass/index.scss";
+
+.form-password {
+  .field  {
+    .input {
+      input {
+        font-size: 16px;
+      }
+
+      i {
+        font-size: 19px;
+      }
+    }
+  }
+  .ui.button {
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 14px;
+    letter-spacing: 3px;
+  }
+}

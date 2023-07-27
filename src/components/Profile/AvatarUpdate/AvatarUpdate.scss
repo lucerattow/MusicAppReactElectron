@@ -1,0 +1,21 @@
+@import "~/src/sass/index.scss";
+
+.avatar-update {
+  border: 2px solid #9a9a9a;
+  border-style: dashed;
+  border-radius: 100px;
+  padding: 10px;
+  transition: opacity 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  .ui.image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+}

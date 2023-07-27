@@ -5,15 +5,14 @@ import { Auth, User } from "../../../api";
 import { defaultUser } from "../../../assets";
 import "./TopBar.scss";
 
-const auth = new Auth();
-const user = new User();
+const authController = new Auth();
+const userController = new User();
 
 export function TopBar() {
   //variables
   const navigation = useNavigate();
-  const userData = user.getMe();
-  const displayName = userData.displayName || "Mi cuenta";
-  const avatar = userData.photoURL || defaultUser;
+  const { displayName, photoURL } = userController.getMe();
+  const avatar = photoURL || defaultUser;
 
   //functions
   const goBack = () => {
@@ -21,7 +20,7 @@ export function TopBar() {
   };
 
   const logout = () => {
-    auth.logout();
+    authController.logout();
   };
 
   //render
@@ -37,7 +36,7 @@ export function TopBar() {
       <div className='top-bar__right'>
         <Link to="/profile">
           <Image src={avatar} avatar />
-          <span>{displayName}</span>
+          <span>{displayName || "Mi cuenta"}</span>
         </Link>
         <Icon
           name="power"

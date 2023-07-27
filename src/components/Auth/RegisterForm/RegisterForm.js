@@ -2,29 +2,31 @@ import React, { useState } from 'react';
 import { Form, Icon } from 'semantic-ui-react';
 import { useFormik } from "formik";
 import { initialValues, validationSchema } from "./RegisterForm.data";
-import { Auth } from "../../../api";
+import { Auth, User } from "../../../api";
 import "./RegisterForm.scss";
 
-const auth = new Auth();
+const authController = new Auth();
+const userController = new User();
 
 export function RegisterForm({ openLogin, goBack }) {
-  //estados
+  //variables
   const [showingPassword, setShowingPassword] = useState(false);
 
-  //funciones
+  //functions
   const showPassword = () => setShowingPassword((prevState) => !prevState);
 
-  //validaciones
+  //validations
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: validationSchema(),
     validateOnChange: false,
     onSubmit: async (formValues) => {
-      await auth.register(formValues.email, formValues.password);
+      await authController.register(formValues.email, formValues.password);
+      await userController.updateDisplayName(formValues.displayName);
     }
   });
 
-  //Renderizado
+  //render
   return (
     <div className='register-form'>
       <h1>Empieza a escuchar con una cuenta de MUSIC gratis!</h1>
@@ -42,13 +44,11 @@ export function RegisterForm({ openLogin, goBack }) {
         <Form.Input
           type={showingPassword ? "text" : "password"}
           placeholder="Contraseña"
-          icon={
-            <Icon
-              name={showingPassword ? "eye" : "eye slash"}
-              link
-              onClick={showPassword}
-            />
-          }
+          icon={{
+            name: showingPassword ? "eye" : "eye slash",
+            link: true,
+            onClick: showPassword
+          }}
           name="password"
           onChange={formik.handleChange}
           value={formik.values.password}
@@ -56,13 +56,13 @@ export function RegisterForm({ openLogin, goBack }) {
         />
         <Form.Input
           type="text"
-          placeholder="Como deberíamos llamarte?"
+          placeholder="Nombre"
           icon="user circle outline"
 
-          name="username"
+          name="displayName"
           onChange={formik.handleChange}
-          value={formik.values.username}
-          error={formik.errors.username}
+          value={formik.values.displayName}
+          error={formik.errors.displayName}
         />
 
         <Form.Button type="submit" primary fluid loading={formik.isSubmitting}>
