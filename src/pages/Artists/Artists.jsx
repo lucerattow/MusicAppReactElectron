@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ListArtists } from "../../components/Artist";
+import { ListArtists } from "../../components/Artists";
 import { Artist } from "../../api";
 import "./Artists.scss";
 

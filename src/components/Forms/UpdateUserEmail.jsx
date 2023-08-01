@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Form } from "semantic-ui-react";
 import { useFormik } from "formik";
-import { initialValues, validationSchema } from "./UpdateEmail.data";
-import { User } from "../../../api";
-import "./UpdateEmail.scss";
+import { initialValues, validationSchema } from "./UpdateUserEmail.data";
+import { User } from "../../api";
+import "./UpdateUserEmail.scss";
 
 const userController = new User();
 
-export function UpdateEmail({ onClose }) {
+export function UpdateUserEmail({ onClose }) {
 	//variables
 	const [showingPassword, setShowingPassword] = useState(false);
 	const { email } = userController.getMe();

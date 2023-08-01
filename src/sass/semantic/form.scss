@@ -2,7 +2,7 @@
   .field {
     .input {
       input {
-        border-radius: 50px;
+        border-radius: 20px;
         background-color: $background-secondary;
         border-color: $background-secondary;
         color: $font-light;
@@ -16,6 +16,57 @@
 
       i {
         color: $font-light;
+      }
+    }
+
+    .dropdown {
+      border-radius: 20px;
+      background-color: $background-secondary !important;
+      border-color: $background-secondary !important;
+
+      &:hover {
+        .menu {
+          border-color: $background-secondary !important;
+        }
+      }
+
+      input {
+        border-radius: 20px;
+        background-color: $background-secondary !important;
+        border-color: $background-secondary !important;
+        color: $font-light;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $background-secondary !important;
+        }
+      }
+
+      .menu {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: $background-secondary;
+        border-color: $background-secondary;
+
+        .item {
+          border-color: $background-secondary;
+
+          span {
+            color: $font-light;
+            opacity: 0.6;
+          }
+        }
+
+        .message {
+          color: $font-grey;
+
+          span {
+            color: $font-light;
+            opacity: 0.6;
+          }
+        }
+
       }
     }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Loader } from "semantic-ui-react";
+import { Grid, Loader, Image } from "semantic-ui-react";
 import { map, size } from "lodash";
 import { Link } from "react-router-dom";
 import "./ListArtists.scss";
@@ -18,8 +18,8 @@ export function ListArtists({ artists }) {
 		<Grid className="list-artists">
 			<Grid.Row columns={5}>
 				{map(artists, artist => (
-					<Grid.Column className="list-artists__artist" key={artist.id} as={Link} to={`/artists/${artist.id}`}>
-						<div style={{ backgroundImage: `url(${artist.image})` }} />
+					<Grid.Column key={artist.id} as={Link} to={`/artists/${artist.id}`} className="list-artists__artist">
+						<Image src={artist.image} alt={artist.name} />
 						<p>{artist.name}</p>
 					</Grid.Column>
 				))}

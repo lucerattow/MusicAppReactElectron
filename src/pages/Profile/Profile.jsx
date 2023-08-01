@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "semantic-ui-react";
-import { AvatarUpdate, UpdateDisplayName, UpdateEmail, UpdatePassword } from "../../components/Profile";
+import { AvatarUpdate } from "../../components/Profile";
+import { UpdateUserName, UpdateUserEmail, UpdateUserPassword } from "../../components/Forms";
 import { BasicModal } from "../../components/Shared";
 import { User } from "../../api";
 import "./Profile.scss";
@@ -18,17 +19,17 @@ export function Profile() {
 	//functions
 	const updateDisplayName = () => {
 		setTitleModal("Actualizar nombre y apellido");
-		setContentModal(<UpdateDisplayName onClose={onCloseModal} />);
+		setContentModal(<UpdateUserName onClose={onCloseModal} />);
 		setShowModal(true);
 	};
 	const updateEmail = () => {
 		setTitleModal("Actualizar correo electrónico");
-		setContentModal(<UpdateEmail onClose={onCloseModal} />);
+		setContentModal(<UpdateUserEmail onClose={onCloseModal} />);
 		setShowModal(true);
 	};
 	const updatePassword = () => {
 		setTitleModal("Cambio de contraseña");
-		setContentModal(<UpdatePassword onClose={onCloseModal} />);
+		setContentModal(<UpdateUserPassword onClose={onCloseModal} />);
 		setShowModal(true);
 	};
 	const onCloseModal = () => {

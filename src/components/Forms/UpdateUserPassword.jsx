@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Form, Icon } from "semantic-ui-react";
 import { useFormik } from "formik";
-import { initialValues, validationSchema } from "./UpdatePassword.data";
-import { Auth, User } from "../../../api";
-import "./UpdatePassword.scss";
+import { initialValues, validationSchema } from "./UpdateUserPassword.data";
+import { Auth, User } from "../../api";
+import "./UpdateUserPassword.scss";
 
 const userController = new User();
 
-export function UpdatePassword({ onClose }) {
+export function UpdateUserPassword({ onClose }) {
 	const [showingPassword, setShowingPassword] = useState(false);
 	const [showingNewPassword, setShowingNewPassword] = useState(false);
 
