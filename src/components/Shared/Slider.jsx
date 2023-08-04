@@ -3,28 +3,38 @@ import { Image, Icon } from "semantic-ui-react";
 import Slick from "react-slick";
 import { map } from "lodash";
 import { Link } from "react-router-dom";
+import { settings } from "./Slider.settings";
 import "./Slider.scss";
 
-const settings = {
-  dots: false,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 5,
-  swipeToSlide: true,
-  centerMode: true
-};
+export function Slider({ data, basePath, isSong }) {
 
-export function Slider({ data, basePath }) {
+  const songClick = () => {
+    console.log("play song");
+  };
 
   return (
     <Slick {...settings} className="slider">
       {map(data, (item) => {
-        return (
-          <Link to={`/${basePath}/${item.id}`} key={Image.id} className='slider__item' >
-            <Image src={item.image} alt={item.name} />
-            <h3>{item.name}</h3>
-          </Link>
-        );
+        if (isSong) {
+          return (
+            <div key={item.id} className='slider__item' onClick={songClick}>
+              <div className='slider__item-image slider__item-play'>
+                <Image src={item.image} alt={item.name} />
+                <Icon name="play circle outline" />
+              </div>
+              <h3>{item.name}</h3>
+            </div>
+          );
+        } else {
+          return (
+            <Link to={`/${basePath}/${item.id}`} key={Image.id} className='slider__item' >
+              <div className='slider__item-image'>
+                <Image src={item.image} alt={item.name} />
+              </div>
+              <h3>{item.name}</h3>
+            </Link>
+          );
+        }
       })}
     </Slick>
   );

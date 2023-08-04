@@ -48,7 +48,7 @@ export function NewAlbum({ onClose }) {
 		validationSchema: validationSchema(),
 		validateOnChange: false,
 		onSubmit: async ({ name, file, artist }) => {
-			const response = await storageController.uploadFile(file, "album", uuidv4());
+			const response = await storageController.uploadFile(file, albumController.collectionName, uuidv4());
 			const imageUrl = await storageController.getUrlFile(response.metadata.fullPath);
 			await albumController.create(name, imageUrl, artist);
 			onClose();

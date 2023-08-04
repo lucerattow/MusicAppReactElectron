@@ -1,1 +1,48 @@
 @import "~/src/sass/index.scss";
+
+.new-song-form {
+  &__file {
+    border: 2px dashed $background-secondary;
+    border-radius: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &.error {
+      border: 2px dashed $danger;
+    }
+
+    .icon {
+      font-size: 50px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    div {
+      margin-bottom: 10px;
+
+      p {
+        margin: 0;
+        color: $font-grey;
+      }
+      p:last-of-type {
+        color: $font-light;
+        font-weight: 900;
+      }
+
+      span {
+        cursor: pointer;
+        font-weight: 900;
+        transition: opacity 0.1s;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

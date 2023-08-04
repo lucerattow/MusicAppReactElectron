@@ -1,9 +1,9 @@
 import {
-  doc,
   setDoc,
+  doc,
   collection,
-  getDoc,
   getDocs,
+  getDoc,
   where,
   query,
   limit,
@@ -13,12 +13,12 @@ import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
 import { db } from "../utils";
 
-export class Album {
+export class Song {
   constructor() {
-    this.collectionName = "albums";
+    this.collectionName = "song";
   }
 
-  async create(name, imageUrl, artist) {
+  async create(name, artist, album, fileUrl) {
     const id = uuidv4();
     const created_at = new Date();
     const data = {
@@ -26,7 +26,8 @@ export class Album {
       created_at,
       name,
       artist,
-      image: imageUrl,
+      album,
+      fileUrl,
     };
 
     const docRef = doc(db, this.collectionName, id);
@@ -51,6 +52,16 @@ export class Album {
   async getByArtist(idArtist) {
     const colleRef = collection(db, this.collectionName);
     const whereRef = where("artist", "==", idArtist);
+    const ordByRef = orderBy("created_at", "desc");
+    const queryRef = query(colleRef, whereRef, ordByRef);
+
+    const snapshot = await getDocs(queryRef);
+    return _.map(snapshot.docs, (doc) => doc.data());
+  }
+
+  async getByAlbum(idAlbum) {
+    const colleRef = collection(db, this.collectionName);
+    const whereRef = where("album", "==", idAlbum);
     const ordByRef = orderBy("created_at", "desc");
     const queryRef = query(colleRef, whereRef, ordByRef);
 
