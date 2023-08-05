@@ -12,6 +12,7 @@ function createWindow() {
         width: 1500,
         height: 1000,
         title: "MusicApp",
+        titleBarStyle: "hiddenInset"
         // titleBarStyle: "hiddenInsert",
         // resizable: false,
     });

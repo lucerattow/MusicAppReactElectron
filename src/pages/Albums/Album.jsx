@@ -13,7 +13,6 @@ export function Album() {
   const { id } = useParams();
   const [album, setAlbum] = useState(null);
   const [songs, setSongs] = useState(null);
-
   useEffect(() => {
     const getAlbum = async () => {
       const albumData = await albumController.getById(id);
@@ -35,7 +34,7 @@ export function Album() {
     return (
       <div className='album-page'>
         <AlbumInfo album={album} />
-        {songs !== null && (<SongList songs={songs} />)}
+        {songs !== null && (<SongList songs={songs} albumImage={album.image} />)}
       </div>
     );
   }

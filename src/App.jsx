@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { LoggedNavigation } from "./routes";
 import { Auth } from "./pages";
+import { PlayerProvider } from "./context";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -16,7 +17,11 @@ function App() {
 
   if (user)
   {
-    return <LoggedNavigation />;
+    return (
+      <PlayerProvider>
+        <LoggedNavigation />
+      </PlayerProvider>
+    );
   }
   else
   {

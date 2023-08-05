@@ -1,15 +1,17 @@
 {
   "name": "music-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "main": "public/electron.js",
   "author": "Lucas Ezequiel Ceratto",
+  "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
     "electron": ".\\node_modules\\.bin\\electron .",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/electron.js"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -24,6 +26,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
+    "react-player": "^2.12.0",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
@@ -38,6 +41,7 @@
   "devDependencies": {
     "concurrently": "^8.2.0",
     "electron": "19.0.5",
+    "electron-builder": "^24.6.3",
     "eslint": "^8.45.0",
     "wait-on": "^7.0.1"
   },
@@ -58,5 +62,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "build": {
+    "appId": "con.lucasceratto.musicapp",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   }
 }
