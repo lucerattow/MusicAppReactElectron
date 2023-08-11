@@ -38,47 +38,6 @@
         align-items: center;
         margin-right: 10px;
       }
-
-      input {
-        -webkit-appearance: none; /* Elimina el estilo predeterminado en Chrome, Safari, etc. */
-        width: 150px;
-        height: 15px;
-        border-radius: 5px;
-        background: $background-secondary;
-        outline: none;
-        border: none;
-
-        &:focus {
-          background: $background-secondary;
-        }
-      }
-
-      /* Estilo del thumb (control deslizante) */
-      input::-webkit-slider-thumb {
-        -webkit-appearance: none; /* Elimina el estilo predeterminado en Chrome, Safari, etc. */
-        appearance: none;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: $primary-color;
-        cursor: pointer;
-      }
-
-      input::-moz-range-thumb {
-        -webkit-appearance: none; /* Elimina el estilo predeterminado en Chrome, Safari, etc. */
-        appearance: none;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: $primary-color;
-        cursor: pointer;
-      }
-
-      /* Estilo de la barra de progreso en Firefox */
-      input::-moz-range-progress,
-      input::-webkit-slider-runnable-track {
-        background: $primary-color;
-      }
     }
   }
 }
